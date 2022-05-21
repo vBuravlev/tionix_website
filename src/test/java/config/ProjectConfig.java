@@ -21,7 +21,7 @@ public interface ProjectConfig extends Config {
     @Key("urlWebSite")
     String urlWebSite();
 
-    @Key("remoteUrl")
+    @Key("remoteDriverUrl")
     String remoteDriverUrl();
 
     @Key("videoStorage")
@@ -32,4 +32,5 @@ public interface ProjectConfig extends Config {
 
     @Key("timeout")
     int timeout();
+
 }

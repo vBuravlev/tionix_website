@@ -2,6 +2,8 @@ package helpers;
 
 import com.codeborne.selenide.Configuration;
 import config.Project;
+import config.ProjectConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaOptions;
@@ -11,7 +13,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class DriverConfig {
 
     public static void configure() {
-
         Configuration.browser = Project.config.browserName();
         Configuration.browserVersion = Project.config.browserVersion();
         Configuration.browserSize = Project.config.browserSize();
