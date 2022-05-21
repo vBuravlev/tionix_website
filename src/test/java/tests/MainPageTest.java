@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
 @JiraIssue("tionix_web")
-public class MainPageTest {
+public class MainPageTest extends BaseTest {
 
     @Test
     @DisplayName("Слайдер 'Продукты и решения'")
