@@ -8,11 +8,10 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
-
+@JiraIssue("tionix_web")
 public class MainPageTest {
 
     @Test
-//    @JiraIssue("QC3-99")
     @DisplayName("Слайдер 'Продукты и решения'")
     @Story("Работа слайдера")
     @Tag("web")
@@ -28,7 +27,6 @@ public class MainPageTest {
     }
 
     @Test
-//    @JiraIssue("QC3-100")
     @DisplayName("Frame Обратная связь")
     @Story("Контакты")
     @Tag("web")
@@ -41,7 +39,6 @@ public class MainPageTest {
     }
 
     @Test
-//    @JiraIssue("QC3-101")
     @DisplayName("Кнопка 'Другие новости'")
     @Story("Новости")
     @Tag("web")
@@ -56,7 +53,6 @@ public class MainPageTest {
 
 
     @Test
-//    @JiraIssue("QC3-102")
     @DisplayName("Реферальные ссылки на партнеров")
     @Story("Партнеры")
     @Tag("web")
@@ -70,7 +66,6 @@ public class MainPageTest {
         }
 
     @Test
-//    @JiraIssue("QC3-103")
     @DisplayName("Скачивания Руководства пользователя")
     @Story("Документация")
     @Tag("web")

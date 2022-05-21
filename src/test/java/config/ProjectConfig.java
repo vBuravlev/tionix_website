@@ -21,9 +21,6 @@ public interface ProjectConfig extends Config {
     @Key("urlWebSite")
     String urlWebSite();
 
-    @Key("browserMobileView")
-    String browserMobileView();
-
     @Key("remoteUrl")
     String remoteDriverUrl();
 
