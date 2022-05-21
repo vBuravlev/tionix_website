@@ -141,7 +141,6 @@ public class MainPage {
         switchTo().window(1);
         webdriver().shouldHave(urlContaining(urlRostelecom));
         sleep(3000);
-        Selenide.closeWindow();
         return this;
     }
 
@@ -150,7 +149,6 @@ public class MainPage {
         switchTo().window(1);
         webdriver().shouldHave(urlContaining(urlManualTionix));
         sleep(3000);
-        Selenide.closeWindow();
         return this;
     }
 
