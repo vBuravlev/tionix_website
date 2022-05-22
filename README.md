@@ -2,13 +2,13 @@
 
 ## :notebook:	Содержание
 
->  :heavy_check_mark: [Технологии и инструменты](#technologist-технологии-и-инструменты)
+>  :heavy_check_mark: [Технологии и инструменты](#computer-технологии-и-инструменты)
 >
->  :heavy_check_mark: [Тестовые проверки UI](#bookmark_tabs-тестовые-проверки)
+>  :heavy_check_mark: [Тестовые проверки UI](#clipboard-тестовые-проверки-ui)
 >
 >  :heavy_check_mark: [Запуск тестов из терминала](#computer-Запуск-тестов-из-терминала)
 >
->  :heavy_check_mark: [Запуск тестов в Jenkins](#-запуск-тестов-в-jenkins)
+>  :heavy_check_mark: [Запуск тестов в Jenkins](#computer-запуск-тестов-в-jenkins)
 >
 >  :heavy_check_mark: [Отчет о результатах тестирования в Allure Report](#-отчет-о-результатах-тестирования-в-allure-report)
 >
@@ -16,7 +16,7 @@
 >
 >  :heavy_check_mark: [Интеграция с Allure TestOps](#-интеграция-с-allure-testops)
 >
->  :heavy_check_mark: [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
+>  :heavy_check_mark: [Уведомления в Telegram с использованием бота Allure Notification](#-уведомления-в-telegram-с-использованием-бота-allure-notification)
 >
 >  :heavy_check_mark: [Пример запуска теста в Selenoid](#-пример-запуска-теста-в-selenoid)
 
@@ -104,7 +104,7 @@ gradle clean test
 *Для запуска сборки необходимо указать значения параметров и нажать кнопку <code><strong>*Собрать*</strong></code>.*
 
 <p align="center">
-  <img src="images/screens/Jenkins.png" alt="job" width="800">
+  <img src="images/screens/JenkinsJob2.png" alt="job" width="800">
 </p>
 
 *После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появятся
@@ -113,7 +113,7 @@ Report*</strong></code> и <img width="2%" title="Allure TestOps" src="images/lo
 TestOps*</strong></code>, кликнув по которым, откроется страница с сформированным html-отчетом.*
 
 <p align="center">
-  <img src="images/screens/Jenkins2.png" alt="job" width="1000">
+  <img src="images/screens/JenkinsJob3.png" alt="job" width="1000">
 </p>
 
 ## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/tionix_web/allure/)
@@ -133,7 +133,15 @@ TestOps*</strong></code>, кликнув по которым, откроется
 >- [x] <code><strong>*EXECUTORS*</strong></code> - отображает исполнителя текущей сборки (ссылка на сборку в Jenkins)
 
 <p align="center">
-  <img src="images/screens/AllureReport.png" alt="Allure Report" width="900">
+  <img src="images/screens/AllureReports.png" alt="Allure Report" width="900">
+</p>
+
+<p align="center">
+  <img src="images/screens/AllureReports3.png" alt="Allure Report" width="900">
+</p>
+
+<p align="center">
+  <img src="images/screens/AllureReports3.png" alt="Allure Report" width="900">
 </p>
 
 ## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/1059/dashboards)
@@ -141,21 +149,22 @@ TestOps*</strong></code>, кликнув по которым, откроется
 ### :pushpin: Основной дашборд
 
 <p align="center">
-  <img src="images/screens/Allure_TO.png" alt="dashboards" width="900">
+  <img src="images/screens/AllureTestOps2.png" alt="dashboards" width="900">
 </p>
 
 ### :pushpin: Тест-кейсы
 
 <p align="center">
-  <img src="images/screens/Allure_TO2.png" alt="test cases" width="900">
+  <img src="images/screens/AllureTestOps.png" alt="test cases" width="900">
 </p>
 
-## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
+## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота [Allure Notification](https://github.com/qa-guru/allure-notifications)
 
 > После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о пройденных тестах.
 
 <p align="center">
-<img title="Telegram Notifications" src="images/screens/Telegram.png">
+<img title="Telegram Notifications" src="images/screens/TelegramBot.png">
+<img title="Telegram Notifications" src="images/screens/TelegramBot2.png">
 </p>
 
 ## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
