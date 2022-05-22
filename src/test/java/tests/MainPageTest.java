@@ -11,6 +11,8 @@ import pages.MainPage;
 @JiraIssue("tionix_web")
 public class MainPageTest extends BaseTest {
 
+    MainPage mainPage = new MainPage();
+
     @Test
     @DisplayName("Слайдер 'Продукты и решения'")
     @Story("Работа слайдера")
@@ -18,7 +20,7 @@ public class MainPageTest extends BaseTest {
     @Owner("buravlev")
     public void sliderProdAndSolution() {
 
-        new MainPage()
+        mainPage
                 .openPage()
                 .openSliderVirt()
                 .checkUrlVirt()
@@ -33,7 +35,7 @@ public class MainPageTest extends BaseTest {
     @Owner("buravlev")
     public void feedbackFrame() {
 
-        new MainPage()
+        mainPage
                 .openPage()
                 .openFeedback();
     }
@@ -45,7 +47,7 @@ public class MainPageTest extends BaseTest {
     @Owner("buravlev")
     public void diffNews() {
 
-        new MainPage()
+        mainPage
                 .openPage()
                 .openNews()
                 .checkUrlNews();
@@ -59,11 +61,11 @@ public class MainPageTest extends BaseTest {
     @Owner("buravlev")
     public void partnersRef() {
 
-            new MainPage()
-                    .openPage()
-                    .openPartnersLink()
-                    .checkUrlNewPageRostelecom();
-        }
+        mainPage
+                .openPage()
+                .openPartnersLink()
+                .checkUrlNewPageRostelecom();
+    }
 
     @Test
     @DisplayName("Скачивания Руководства пользователя")
@@ -72,7 +74,7 @@ public class MainPageTest extends BaseTest {
     @Owner("buravlev")
     public void downloadUserManual() {
 
-        new MainPage()
+        mainPage
                 .openPage()
                 .openDocumentation()
                 .checkUrlNewPageManual();

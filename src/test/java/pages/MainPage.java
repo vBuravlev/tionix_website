@@ -15,7 +15,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class MainPage {
-    String urlWebSite = Project.config.urlWebSite();
 
     //Метаинформация на главной странице
     private SelenideElement
@@ -68,8 +67,7 @@ public class MainPage {
 
     @Step("Открываем главную страницу")
     public MainPage openPage() {
-        open(urlWebSite);
-        open("https://tionix.ru/");
+        open("baseURL");
         headerTitle.shouldBe(visible);
         return this;
     }
