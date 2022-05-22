@@ -63,22 +63,18 @@
 
 ### Локальный запуск тестов
 
+*Пример конфигурационного файла для локального запуска из терминала находится в resourse/config/local_example.properties*
+
 ```bash
-gradle clean test
+./gradlew clean test -DtypeConfig=local -Dthreads=1 -DurlWebSite=https://tionix.ru/
 ```
 
 ### Удаленный запуск тестов
 
+*Пример конфигурационного файла для удаленного запуска из терминала находится в resourse/config/remote_example.properties*
+
 ```bash
-gradle clean test 
--Dbrowser=${BROWSER}
--DbrowserVersion=${BROWSER_VERSION}
--DbrowserSize=${BROWSER_SIZE}
--DremoteDriverUrl=https://${USER}:${PASSWORD}@${REMOTE_DRIVER_URL}/wd/hub/
--DvideoStorage=https://${REMOTE_DRIVER_URL}/video/
--Dthreads=${THREADS}
--Dtimeout=${TIMEOUT}
--DtimeoutAttach=${TIMEOUTATTACH}
+./gradlew clean test -DtypeConfig=remote -Dthreads=5 -DurlWebSite=https://tionix.ru/
 ```
 ### Параметры сборки
 
