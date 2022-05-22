@@ -13,7 +13,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class DriverConfig {
 
     public static void configure() {
-        Configuration.baseUrl = Project.config.baseURL();
         Configuration.browser = Project.config.browserName();
         Configuration.browserVersion = Project.config.browserVersion();
         Configuration.browserSize = Project.config.browserSize();

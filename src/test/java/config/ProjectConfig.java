@@ -4,7 +4,6 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "system:properties",
         "classpath:config/${typeConfig}.properties"
 })
 public interface ProjectConfig extends Config {
@@ -18,8 +17,8 @@ public interface ProjectConfig extends Config {
     @Key("browserSize")
     String browserSize();
 
-    @Key("baseURL")
-    String baseURL();
+    @Key("urlWebSite")
+    String urlWebSite();
 
     @Key("remoteDriverUrl")
     String remoteDriverUrl();

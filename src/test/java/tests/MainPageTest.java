@@ -1,6 +1,6 @@
 package tests;
 
-import customAnatations.JiraIssue;
+
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 
-@JiraIssue("tionix_web")
 public class MainPageTest extends BaseTest {
 
     @Test

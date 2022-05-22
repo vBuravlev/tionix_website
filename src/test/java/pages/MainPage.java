@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
 import static org.assertj.core.api.Assertions.assertThat;
-import static tests.BaseTest.baseUrlForTest;
 
 
 public class MainPage {
@@ -64,11 +63,12 @@ public class MainPage {
     private String
             feedbackTitle = "Обратная связь ";
 
+
     //Действия на странице
 
     @Step("Открываем главную страницу")
     public MainPage openPage() {
-        open(baseUrlForTest);
+        open("https://tionix.ru/");
         headerTitle.shouldBe(visible);
         return this;
     }
