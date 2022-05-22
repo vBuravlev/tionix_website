@@ -21,7 +21,6 @@ public class BaseTest {
     @BeforeAll
     static void setup() {
         DriverConfig.configure();
-        System.out.println(Configuration.browser);
     }
 
     @BeforeEach
