@@ -18,7 +18,6 @@ public class DriverConfig {
         Configuration.browserVersion = Project.config.browserVersion();
         Configuration.browserSize = Project.config.browserSize();
         Configuration.timeout = Project.config.timeout();
-        System.setProperty("threads", Project.config.threads());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();

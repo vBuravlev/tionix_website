@@ -17,10 +17,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith({AllureJunit5.class})
 public class BaseTest {
+    public static String baseUrlForTest;
 
     @BeforeAll
     static void setup() {
         DriverConfig.configure();
+        baseUrlForTest = Project.config.baseURL();
     }
 
     @BeforeEach

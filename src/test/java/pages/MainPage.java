@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
 import static org.assertj.core.api.Assertions.assertThat;
+import static tests.BaseTest.baseUrlForTest;
 
 
 public class MainPage {
@@ -67,7 +68,7 @@ public class MainPage {
 
     @Step("Открываем главную страницу")
     public MainPage openPage() {
-        open("https://tionix.ru/");
+        open(baseUrlForTest);
         headerTitle.shouldBe(visible);
         return this;
     }
