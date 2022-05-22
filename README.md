@@ -2,13 +2,13 @@
 
 ## :notebook:	Содержание
 
->  :heavy_check_mark: [Технологии и инструменты](#technologist-технологии-и-инструменты)
+>  :heavy_check_mark: [Технологии и инструменты](#computer-технологии-и-инструменты)
 >
->  :heavy_check_mark: [Тестовые проверки UI](#bookmark_tabs-тестовые-проверки)
+>  :heavy_check_mark: [Тестовые проверки UI](#clipboard-тестовые-проверки-ui)
 >
 >  :heavy_check_mark: [Запуск тестов из терминала](#computer-Запуск-тестов-из-терминала)
 >
->  :heavy_check_mark: [Запуск тестов в Jenkins](#-запуск-тестов-в-jenkins)
+>  :heavy_check_mark: [Запуск тестов в Jenkins](#computer-запуск-тестов-в-jenkins)
 >
 >  :heavy_check_mark: [Отчет о результатах тестирования в Allure Report](#-отчет-о-результатах-тестирования-в-allure-report)
 >
@@ -16,7 +16,7 @@
 >
 >  :heavy_check_mark: [Интеграция с Allure TestOps](#-интеграция-с-allure-testops)
 >
->  :heavy_check_mark: [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
+>  :heavy_check_mark: [Уведомления в Telegram с использованием бота Allure Notification](#-уведомления-в-telegram-с-использованием-бота-allure-notification)
 >
 >  :heavy_check_mark: [Пример запуска теста в Selenoid](#-пример-запуска-теста-в-selenoid)
 
@@ -63,28 +63,24 @@
 
 ### Локальный запуск тестов
 
+*Пример конфигурационного файла для локального запуска из терминала находится в resourse/config/local_example.properties*
+
 ```bash
-gradle clean test
+./gradlew clean test -DtypeConfig=local -Dthreads=1 -DurlWebSite=https://tionix.ru/
 ```
 
 ### Удаленный запуск тестов
 
+*Пример конфигурационного файла для удаленного запуска из терминала находится в resourse/config/remote_example.properties*
+
 ```bash
-gradle clean test 
--Dbrowser=${BROWSER}
--DbrowserVersion=${BROWSER_VERSION}
--DbrowserSize=${BROWSER_SIZE}
--DremoteDriverUrl=https://${USER}:${PASSWORD}@${REMOTE_DRIVER_URL}/wd/hub/
--DvideoStorage=https://${REMOTE_DRIVER_URL}/video/
--Dthreads=${THREADS}
--Dtimeout=${TIMEOUT}
--DtimeoutAttach=${TIMEOUTATTACH}
+./gradlew clean test -DtypeConfig=remote -Dthreads=5 -DurlWebSite=https://tionix.ru/
 ```
 ### Параметры сборки
 
 > <code>BROWSER</code> – браузер, в котором будут выполняться тесты (_по умолчанию - <code>chrome</code>_).
 >
-> <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты (_по умолчанию - <code>91.0</code>_).
+> <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты (_по умолчанию - <code>100.0</code>_).
 >
 > <code>BROWSER_SIZE</code> – разрешени окна браузера, в котором будут выполняться тесты (_по умолчанию - <code>1920x1080</code>_).
 >
@@ -94,17 +90,17 @@ gradle clean test
 >
 > <code>PASSWORD</code> - пароль пользователя для подключения к Selenoid
 >
-> <code>THREADS</code> - количество одновременных запускаемых потоков для тестов.
+> <code>THREADS</code> - количество одновременных запускаемых потоков для тестов (_по умолчанию в сборке выставлено - <code>5</code>_).
 >
-> <code>TIMEOUT</code> - задержка в 'мс' Selenide.timeout(), в случае если тесты нестабильны, то можно улучшить ситуацию за счет увеличения данного параметра до 10000 (_по умолчанию - <code>4000</code>_).
+> <code>TIMEOUT</code> - задержка в 'мс' Selenide.timeout(), в случае если тесты нестабильны, то можно улучшить ситуацию за счет увеличения данного параметра до 10000 (_по умолчанию в сборке выставлено - <code>5000</code>_).
 >
-><code>TIMEOUTATTACH</code> - задержка в 'мс' для прикрепления видео прохождения тестов, в случае если тесты нестабильны и появляется исключения при attachVideo в Allure, то можно улучшить ситуацию за счет увеличения данного параметра до 5000 (_по умолчанию - <code>1000</code>_).
+><code>TIMEOUTATTACH</code> - задержка в 'мс' для прикрепления видео прохождения тестов, в случае если тесты нестабильны и появляется исключения при attachVideo в Allure, то можно улучшить ситуацию за счет увеличения данного параметра до 10000 (_по умолчанию в сборке выставлено - <code>5000</code>_).
 
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins]([https://jenkins.autotests.cloud/job/tionix_web/](https://jenkins.autotests.cloud/job/tionix_web/))
 *Для запуска сборки необходимо указать значения параметров и нажать кнопку <code><strong>*Собрать*</strong></code>.*
 
 <p align="center">
-  <img src="images/screens/Jenkins.png" alt="job" width="800">
+  <img src="images/screens/JenkinsJob2.png" alt="job" width="800">
 </p>
 
 *После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появятся
@@ -113,7 +109,7 @@ Report*</strong></code> и <img width="2%" title="Allure TestOps" src="images/lo
 TestOps*</strong></code>, кликнув по которым, откроется страница с сформированным html-отчетом.*
 
 <p align="center">
-  <img src="images/screens/Jenkins2.png" alt="job" width="1000">
+  <img src="images/screens/JenkinsJob3.png" alt="job" width="1000">
 </p>
 
 ## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/tionix_web/allure/)
@@ -133,7 +129,15 @@ TestOps*</strong></code>, кликнув по которым, откроется
 >- [x] <code><strong>*EXECUTORS*</strong></code> - отображает исполнителя текущей сборки (ссылка на сборку в Jenkins)
 
 <p align="center">
-  <img src="images/screens/AllureReport.png" alt="Allure Report" width="900">
+  <img src="images/screens/AllureReports.png" alt="Allure Report" width="900">
+</p>
+
+<p align="center">
+  <img src="images/screens/AllureReports3.png" alt="Allure Report" width="900">
+</p>
+
+<p align="center">
+  <img src="images/screens/AllureReports3.png" alt="Allure Report" width="900">
 </p>
 
 ## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/1059/dashboards)
@@ -141,21 +145,22 @@ TestOps*</strong></code>, кликнув по которым, откроется
 ### :pushpin: Основной дашборд
 
 <p align="center">
-  <img src="images/screens/Allure_TO.png" alt="dashboards" width="900">
+  <img src="images/screens/AllureTestOps2.png" alt="dashboards" width="900">
 </p>
 
 ### :pushpin: Тест-кейсы
 
 <p align="center">
-  <img src="images/screens/Allure_TO2.png" alt="test cases" width="900">
+  <img src="images/screens/AllureTestOps.png" alt="test cases" width="900">
 </p>
 
-## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
+## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота [Allure Notification](https://github.com/qa-guru/allure-notifications)
 
 > После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о пройденных тестах.
 
 <p align="center">
-<img title="Telegram Notifications" src="images/screens/Telegram.png">
+<img title="Telegram Notifications" src="images/screens/TelegramBot.png">
+<img title="Telegram Notifications" src="images/screens/TelegramBot2.png">
 </p>
 
 ## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
