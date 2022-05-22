@@ -23,7 +23,6 @@ public class BaseTest {
         DriverConfig.configure();
     }
 
-
     @BeforeEach
     public void listenerAllure() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
