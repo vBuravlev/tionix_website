@@ -68,7 +68,7 @@ public class MainPage {
 
     @Step("Открываем главную страницу")
     public MainPage openPage() {
-        open("https://tionix.ru/");
+        open(System.getProperty("urlWebSite"));
         headerTitle.shouldBe(visible);
         return this;
     }

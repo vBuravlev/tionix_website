@@ -67,6 +67,7 @@ tasks.withType(JavaCompile) {
 tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
+    systemProperties['selenide.browser'] = System.getenv()['selenide.browser']
     systemProperty 'allure.link.tms.pattern', 'https://jira.atlassian.com/browse/{}'
     systemProperty 'allure.link.issue.pattern', 'https://jira.atlassian.com/browse/{}'
 

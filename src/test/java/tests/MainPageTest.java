@@ -1,6 +1,7 @@
 package tests;
 
 
+import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +17,6 @@ public class MainPageTest extends BaseTest {
     @Tag("web")
     @Owner("buravlev")
     public void sliderProdAndSolution() {
-
         new MainPage()
                 .openPage()
                 .openSliderVirt()
