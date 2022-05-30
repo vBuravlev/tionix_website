@@ -1,15 +1,17 @@
 package tests;
 
 
-import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import pages.FilesStoragePage;
 import pages.MainPage;
+import pages.RostelecomPage;
+import pages.ServicesPage;
 
-public class MainPageTest extends BaseTest {
+public class FunctionalTest extends BaseTest {
 
     @Test
     @DisplayName("Слайдер 'Продукты и решения'")
@@ -21,7 +23,9 @@ public class MainPageTest extends BaseTest {
                 .openPage()
                 .openSliderVirt()
                 .checkUrlVirt()
-                .openMoreDetailVirt()
+                .openMoreDetailVirt();
+
+        new ServicesPage()
                 .checkUrlVirtPage();
     }
 
@@ -60,7 +64,9 @@ public class MainPageTest extends BaseTest {
 
         new MainPage()
                 .openPage()
-                .openPartnersLink()
+                .openPartnersLink();
+
+        new RostelecomPage()
                 .checkUrlNewPageRostelecom();
     }
 
@@ -73,9 +79,10 @@ public class MainPageTest extends BaseTest {
 
         new MainPage()
                 .openPage()
-                .openDocumentation()
+                .openDocumentation();
+
+        new FilesStoragePage()
                 .checkUrlNewPageManual();
     }
-
 
 }

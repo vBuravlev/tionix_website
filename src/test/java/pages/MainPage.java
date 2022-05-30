@@ -1,13 +1,9 @@
 package pages;
 
-import config.Project;
-import tests.BaseTest;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
@@ -33,16 +29,12 @@ public class MainPage {
             groupCompany = $x("//div[text()='Входим в группу компаний']"),
             logoRostelecom = $x("//img[contains(@src,'Logo_Rostelecom.svg')]");
 
-    private String
-            urlRostelecom = ".rt.ru";
+
 
     //Документация
     private SelenideElement
             documentation = $x("//div[text()='Документация']"),
             manualTionix = $x("//a[text()='Руководство пользователя']");
-
-    private String
-            urlManualTionix = "https://files.tionix.ru/";
 
     //Виртуализация облака (слайдер)
     private SelenideElement
@@ -50,8 +42,7 @@ public class MainPage {
             productVirt = $x("//div[text()='Виртуализация облака ']");
 
     private String
-            urlSliderProd = "https://tionix.ru/#!/tab/276762841-2",
-            urlCloudPlatform = "https://tionix.ru/services/tionix-cloud-platform/";
+            urlSliderProd = "https://tionix.ru/#!/tab/276762841-2";
 
 
     //Обратная связь
@@ -68,7 +59,7 @@ public class MainPage {
 
     @Step("Открываем главную страницу")
     public MainPage openPage() {
-        open(System.getProperty("urlWebSite"));
+        open("/");
         headerTitle.shouldBe(visible);
         return this;
     }
@@ -123,11 +114,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверяем URL страницы для продукта Вирутализации при клике на 'Подробнее'")
-    public MainPage checkUrlVirtPage() {
-        webdriver().shouldHave(url(urlCloudPlatform));
-        return this;
-    }
+
 
     @Step("Проверяем URL страницы для Новостей")
     public MainPage checkUrlNews() {
@@ -135,20 +122,7 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверяем URL страницы для реферальной ссылки Ростелеком")
-    public MainPage checkUrlNewPageRostelecom() {
-        switchTo().window(1);
-        webdriver().shouldHave(urlContaining(urlRostelecom));
-        sleep(3000);
-        return this;
-    }
 
-    @Step("Проверяем URL страницы для Руководства пользователя")
-    public MainPage checkUrlNewPageManual() {
-        switchTo().window(1);
-        webdriver().shouldHave(urlContaining(urlManualTionix));
-        sleep(3000);
-        return this;
-    }
+
 
 }
